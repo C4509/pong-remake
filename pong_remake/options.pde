@@ -4,7 +4,7 @@ void options() {
   fill(0);
   text("Ball Speed:", 50, 100);
   fill(255);
-  strokeWeight(7);
+  strokeWeight(5);
   //buttons to set ball speed
   //slow button
   tactileRect3(250, 70, 350, 120, purple, daffodil, daffodil, purple, 1);

@@ -8,7 +8,12 @@ import ddf.minim.ugens.*;
 //Cierra Cheung
 //Oct.15, 2020
 //Block 1-1B
-//intro music credits: https://www.youtube.com/watch?v=2kP1bZfUNJE
+//intro music credits: https://www.youtube.com/watch?v=2kP1bZfUNJEt
+//Note for Mr. Pelletier: right paddle ignores the limit when in AI mode. When it reaches
+//the edge, the paddle will start a process of repeatedly moving up or down until only
+//half of it is shown, then completely return to the screen and move upwards/downwards
+//again. I asked you about this on Teams o the due date, but you didn't respond, so I 
+//decided to just turn in the project to get it in on time.
 Minim minim;
 AudioPlayer score;
 AudioPlayer paddle1;
@@ -83,7 +88,7 @@ void setup() {
   paddle2 = minim.loadFile("rightpaddle.wav");
   theme = minim.loadFile("pong.mp3");
   wall = minim.loadFile("wall.wav");
-   win = minim.loadFile("applause3.mp3");
+  win = minim.loadFile("applause3.mp3");
 }
 
 void draw() {
@@ -91,13 +96,13 @@ void draw() {
     intro();
   } else if (mode==options) {
     options();
-} else if (mode==game) {
-  game();
-} else if (mode==pause) {
-  pause();
-} else if (mode==gameover) {
-  gameover();
-} else {
-  println("Error: Mode = " + mode);
-}
+  } else if (mode==game) {
+    game();
+  } else if (mode==pause) {
+    pause();
+  } else if (mode==gameover) {
+    gameover();
+  } else {
+    println("Error: Mode = " + mode);
+  }
 }

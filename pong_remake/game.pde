@@ -94,18 +94,18 @@ void game() {
     if (ballx > width/2) {
       if (bally < righty) {
         if (ballspeed == 1) {
-          righty --;
+          righty = righty - 2;
           //right paddle limits
           if (righty > height - 110) {
       righty = height - 110;
     }
         } else if (ballspeed == 2) {
-          righty = righty - 2;
+          righty = righty - 3;
           if (righty > height - 110) {
       righty = height - 110;
     }
         } else if (ballspeed == 3) {
-          righty = righty - 4;
+          righty = righty - 5;
           if (righty > height - 110) {
       righty = height - 110;
     }
