@@ -1,36 +1,40 @@
 void game() {
-  background(8, 34, 157);
+  background(14, 11, 113);
   theme.rewind();
   theme.pause();
   strokeWeight(2);
-  fill(227,151,103);
+  fill(227, 151, 103);
   line(400, 0, 400, 800);
   timer = timer - 1;
+  //text keeping track of score
   fill(255, 197, 3);
   textSize(60);
   text(lscore, 200, 100);
   fill(38, 230, 334);
   text(rscore, 600, 100);
-  fill(255);
-  stroke(255);
+  //pause button
+  fill(255, 197, 3);
+  stroke(255, 197, 3);
   rect(73, 55, 65, 65);
-  fill(0);
-  stroke(0);
+  fill(8, 34, 157);
+  stroke(8, 34, 157);
   rect(90, 65, 10, 40);
   rect(110, 65, 10, 40);
+
   if (lscore == 3 || rscore == 3) {
     mode=gameover;
   }
   //draw ball
-  fill(200);
+  fill(220, 150, 232);
+  stroke(daffodil);
   strokeWeight(5);
   circle(ballx, bally, balld);
   //draw paddles
   fill(255, 197, 3);
-  stroke(38,230,334);
+  stroke(38, 230, 334);
   circle(leftx, lefty, leftd);
   fill(38, 230, 334);
-  stroke(255,197,3);
+  stroke(255, 197, 3);
   circle(rightx, righty, rightd);
   //move ball
   if (timer < 0) {
@@ -40,79 +44,103 @@ void game() {
   //make ball bounce off wall
   if (bally < 50 ||bally > height - 50) {
     ballvy = ballvy * -1;
-  soundcontrol(wall);
+    soundcontrol(wall);
   }
-  //make ball bounce on intuitive angle
+  //make ball bounce off paddles at intuitive angle
   if (dist(leftx, lefty, ballx, bally) < 140) {
     soundcontrol(paddle1);
-    ballvx = (ballx - leftx)/35;
-    ballvy = (bally - lefty)/35;
+    ballvx = (ballx - leftx)/20;
+    ballvy = (bally - lefty)/20;
   }
   if (dist(rightx, righty, ballx, bally) < 140) {
-   soundcontrol(paddle2);
-    ballvx = (ballx - rightx)/35;
-    ballvy = (bally - righty)/35;
+    soundcontrol(paddle2);
+    ballvx = (ballx - rightx)/20;
+    ballvy = (bally - righty)/20;
   }
-if (bally < 40){
-  bally = 40;}
- if (bally > height - 40){
-   bally = height - 40;}
+  //ball limits
+  if (bally < 0) {
+    bally = 40;
+  }
+  if (bally > height - 40) {
+    bally = height - 40;
+  }
 
   //score left
   if (ballx > width - 40) {
-   soundcontrol(score);
+    soundcontrol(score);
     lscore++;
     resetgame();
   }
   //score right
   if (ballx < 40) {
-  soundcontrol(score);
+    soundcontrol(score);
     rscore++;
     resetgame();
   }
 
-  //move paddles
+  //move left paddle
   if (wkey == true) lefty = lefty - 5;
-  if (lefty < 100) {
-    lefty = 100;
+  //left paddle limit
+  if (lefty < 110) {
+    lefty = 110;
   }
   if (skey == true) lefty = lefty + 5;
-  if (lefty > height - 100) {
-    lefty = height - 100;
+  //left paddle limit
+  if (lefty > height - 110) {
+    lefty = height - 110;
   }
+      //move right paddle
   if (AI == true) {
     if (ballx > width/2) {
       if (bally < righty) {
         if (ballspeed == 1) {
           righty --;
+          //right paddle limits
+          if (righty > height - 110) {
+      righty = height - 110;
+    }
         } else if (ballspeed == 2) {
           righty = righty - 2;
+          if (righty > height - 110) {
+      righty = height - 110;
+    }
         } else if (ballspeed == 3) {
           righty = righty - 4;
+          if (righty > height - 110) {
+      righty = height - 110;
+    }
         } else {
           righty = righty - 0;
         }
       } else if (bally > righty) {
         if (ballspeed == 1) {
           righty ++;
+          if (righty < 110) {
+      righty = 110;
+    }
         } else if (ballspeed == 2) {
-          righty = righty + 2;
+          righty = righty + 5;
+          if (righty < 110) {
+      righty = 110;
+    }
         } else if (ballspeed == 3) {
           righty = righty + 2;
+          if (righty < 110) {
+      righty = 110;
+    }
         } else {
           righty = righty + 0;
         }
       }
     }
   } else if (AI == false) {
-    //move right paddle
     if (upkey == true) righty = righty - 5;
-    if (righty < 100) {
-      righty = 100;
+    if (righty < 140) {
+      righty = 140;
     }
     if (downkey == true) righty = righty + 5;
-    if (righty > height - 100) {
-      righty = height - 100;
+    if (righty > height - 200) {
+      righty = height - 200;
     }
   }
 }

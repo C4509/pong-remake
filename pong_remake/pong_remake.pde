@@ -67,12 +67,16 @@ void setup() {
   skey = false;
   upkey = false;
   downkey = false; 
+  //initialize score variables
   rscore = 0;
   lscore = 0;
+  //initialize ball speed
   ballspeed=2;
   sound = 1;
+  //initialize AI
   AI = true;
-  timer = 50;
+  //initialize timer
+  timer = 100;
   minim = new Minim(this);
   score = minim.loadFile("score.wav");
   paddle1 = minim.loadFile("leftpaddle.wav");

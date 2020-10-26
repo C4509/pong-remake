@@ -24,11 +24,11 @@ void reset() {
     }
   } else if  (ballspeed == 3) {
     if (random(100) > 50) {
-      ballvx=5;
-      ballvy=5;
+      ballvx=10;
+      ballvy=10;
     } else {
-      ballvx = -5;
-      ballvy = -5;
+      ballvx = -10;
+      ballvy = -10;
     }
   }
 }
@@ -38,7 +38,32 @@ void resetgame(){ballx = width/2;
   righty = height/2;
   timer = 100;
    ballx = ballx + ballvx;
-    bally = bally + ballvy;} 
+    bally = bally + ballvy;
+  if (ballspeed==1) {
+    if (random(100) > 50) {
+      ballvx=3;
+      ballvy=3;
+    } else {
+      ballvx = -3;
+      ballvy = -3;
+    }
+  } else if (ballspeed==2) {
+    if (random(100) > 50) {
+      ballvx=5;
+      ballvy=5;
+    } else {
+      ballvx = -5;
+      ballvy = -5;
+    }
+  } else if  (ballspeed == 3) {
+    if (random(100) > 50) {
+      ballvx=7;
+      ballvy=7;
+    } else {
+      ballvx = -7;
+      ballvy = -7;
+    }
+  }} 
 void tactileRect(int x, int y, int x2, int y2, int f, int f2, int s, int s2) {
   if (mouseX > x && mouseX < x2 && mouseY > y && mouseY < y2) {
     strokeWeight(1);

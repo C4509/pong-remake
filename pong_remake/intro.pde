@@ -12,8 +12,10 @@ void intro() {
   textSize(225);
   fill(daffodil);
   text("Pong", 153, 270);
+  //1 player game start button
   tactileRect(230, 400, 580, 500, daffodil, purple, purple, daffodil);
   rect(230, 400, 350, 100);
+  //2 player game start button
   tactileRect(230, 550, 590, 650, daffodil, purple, purple, daffodil);
   rect(230, 550, 360, 100);
   tactileRect(280, 680, 530, 780, daffodil, purple, purple, daffodil);
