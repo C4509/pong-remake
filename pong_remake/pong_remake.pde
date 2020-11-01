@@ -9,11 +9,6 @@ import ddf.minim.ugens.*;
 //Oct.15, 2020
 //Block 1-1B
 //intro music credits: https://www.youtube.com/watch?v=2kP1bZfUNJEt
-//Note for Mr. Pelletier: right paddle ignores the limit when in AI mode. When it reaches
-//the edge, the paddle will start a process of repeatedly moving up or down until only
-//half of it is shown, then completely return to the screen and move upwards/downwards
-//again. I asked you about this on Teams o the due date, but you didn't respond, so I 
-//decided to just turn in the project to get it in on time.
 Minim minim;
 AudioPlayer score;
 AudioPlayer paddle1;
@@ -31,10 +26,8 @@ final int gameover= 5;
 
 int ballspeed;
 //colors
-color mint = #12FF7A;
-color daffodil = #DDF298;
+color lightyellow = #DDF298;
 color purple = #C311F5;
-color t = #27EBFF;
 //entity variables
 float leftx, lefty, rightx, righty, leftd, rightd;
 float ballx, bally, balld, ballvx, ballvy;

@@ -26,7 +26,7 @@ void game() {
   }
   //draw ball
   fill(220, 150, 232);
-  stroke(daffodil);
+  stroke(lightyellow);
   strokeWeight(5);
   circle(ballx, bally, balld);
   //draw paddles
@@ -89,45 +89,26 @@ void game() {
   if (lefty > height - 110) {
     lefty = height - 110;
   }
-      //move right paddle
+  //move right paddle
   if (AI == true) {
     if (ballx > width/2) {
       if (bally < righty) {
         if (ballspeed == 1) {
           righty = righty - 2;
-          //right paddle limits
-          if (righty > height - 110) {
-      righty = height - 110;
-    }
         } else if (ballspeed == 2) {
           righty = righty - 3;
-          if (righty > height - 110) {
-      righty = height - 110;
-    }
         } else if (ballspeed == 3) {
           righty = righty - 5;
-          if (righty > height - 110) {
-      righty = height - 110;
-    }
         } else {
           righty = righty - 0;
         }
       } else if (bally > righty) {
         if (ballspeed == 1) {
           righty ++;
-          if (righty < 110) {
-      righty = 110;
-    }
         } else if (ballspeed == 2) {
           righty = righty + 5;
-          if (righty < 110) {
-      righty = 110;
-    }
         } else if (ballspeed == 3) {
           righty = righty + 2;
-          if (righty < 110) {
-      righty = 110;
-    }
         } else {
           righty = righty + 0;
         }
@@ -135,13 +116,14 @@ void game() {
     }
   } else if (AI == false) {
     if (upkey == true) righty = righty - 5;
-    if (righty < 140) {
-      righty = 140;
-    }
     if (downkey == true) righty = righty + 5;
-    if (righty > height - 200) {
-      righty = height - 200;
-    }
+  }
+  //right paddle limits
+  if (righty < 110) {
+    righty = 110;
+  }
+  if (righty > height - 110) {
+    righty = height - 110;
   }
 }
 

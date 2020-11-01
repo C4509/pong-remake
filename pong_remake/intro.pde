@@ -10,23 +10,23 @@ void intro() {
   }
   strokeWeight(1);
   textSize(225);
-  fill(daffodil);
+  fill(lightyellow);
   text("Pong", 153, 270);
   //1 player game start button
-  tactileRect(230, 400, 580, 500, daffodil, purple, purple, daffodil);
+  tactileRect(230, 400, 580, 500, lightyellow, purple, purple, lightyellow);
   rect(230, 400, 350, 100);
   //2 player game start button
-  tactileRect(230, 550, 590, 650, daffodil, purple, purple, daffodil);
+  tactileRect(230, 550, 590, 650, lightyellow, purple, purple, lightyellow);
   rect(230, 550, 360, 100);
-  tactileRect(280, 680, 530, 780, daffodil, purple, purple, daffodil);
+  tactileRect(280, 680, 530, 780, lightyellow, purple, purple, lightyellow);
   rect(280, 680, 250, 100);
   textSize(60);
   fill(0);
-  textFill(230, 400, 580, 500, purple, daffodil);
+  textFill(230, 400, 580, 500, purple, lightyellow);
   text("One Player", 250, 468);
-  textFill(230, 550, 590, 650, purple, daffodil);
+  textFill(230, 550, 590, 650, purple, lightyellow);
   text("Two Player", 255, 618);
-  textFill(280, 680, 530, 780, purple, daffodil);
+  textFill(280, 680, 530, 780, purple, lightyellow);
   text("Options", 290, 748);
 }
 

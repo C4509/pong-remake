@@ -9,7 +9,7 @@ void pause() {
   stroke(8, 34, 157);
   triangle(95, 67, 120, 85, 95, 110);
   textSize(250);
-  fill(daffodil);
+  fill(lightyellow);
   text("PAUSE", 40, 400);
 }
 void pauseClicks() {
